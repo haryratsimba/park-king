@@ -5,26 +5,16 @@
 		<artifactId>park-king</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>parkking-service</artifactId>
+	<artifactId>parkking-poitiers-connector</artifactId>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.parkking</groupId>
-			<artifactId>parkking-db</artifactId>
-			<version>${project.version}</version>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.parkking</groupId>
 			<artifactId>parkking-common-connector</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.parkking</groupId>
-			<artifactId>parkking-poitiers-connector</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
