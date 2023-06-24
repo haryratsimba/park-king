@@ -19,13 +19,6 @@
 		<java.version>17</java.version>
 	</properties>
 
-	<!--<dependencyManagement>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
-		</dependency>
-	</dependencyManagement>-->
-
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -35,8 +28,7 @@
 	</dependencies>
 
 	<modules>
-		<module>parkking-webservice</module>
-		<module>parkking-service</module>
-		<module>parkking-db</module>
+		<module>parkking-cities-connector</module>
+		<module>parkking-cities-api</module>
 	</modules>
 </project>
