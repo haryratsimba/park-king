@@ -5,7 +5,7 @@
 		<artifactId>park-king</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>parkking-core</artifactId>
+	<artifactId>parkking-webservice</artifactId>
 
 	<dependencies>
 		<dependency>
