@@ -15,12 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.parkking.api.ParkkingApiException;
 import com.parkking.api.ParkkingApiResponse;
-import com.parkking.constant.WebserviceMapping;
 import com.parkking.dto.Parking;
 import com.parkking.service.ParkingService;
 
 @RestController
-@RequestMapping(value = WebserviceMapping.PARKING, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/parking", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ParkingController {
 
     @Autowired
