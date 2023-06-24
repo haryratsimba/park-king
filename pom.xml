@@ -28,8 +28,8 @@
 	</dependencies>
 
 	<modules>
-		<module>parkking-core</module>
-		<module>parkking-db</module>
+		<module>parkking-webservice</module>
 		<module>parkking-service</module>
+		<module>parkking-db</module>
 	</modules>
 </project>
