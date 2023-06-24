@@ -9,6 +9,10 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.parkking</groupId>
 			<artifactId>parkking-db</artifactId>
 			<version>${project.version}</version>

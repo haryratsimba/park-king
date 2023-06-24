@@ -1,4 +1,4 @@
-package com.parkking.api;
+package com.parkking.exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

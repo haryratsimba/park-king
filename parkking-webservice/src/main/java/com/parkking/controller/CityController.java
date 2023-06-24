@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.parkking.api.ParkkingApiException;
 import com.parkking.api.ParkkingApiResponse;
 import com.parkking.dto.City;
+import com.parkking.exception.ParkkingApiException;
 import com.parkking.service.CityService;
 
 @RestController

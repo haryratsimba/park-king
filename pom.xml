@@ -19,6 +19,13 @@
 		<java.version>17</java.version>
 	</properties>
 
+	<!--<dependencyManagement>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+	</dependencyManagement>-->
+
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

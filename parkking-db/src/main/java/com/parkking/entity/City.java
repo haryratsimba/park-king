@@ -1,6 +1,6 @@
 package com.parkking.entity;
 
-import org.springframework.data.geo.Polygon;
+import org.locationtech.jts.geom.Polygon;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,6 +19,7 @@ public class City {
 
 	private Polygon polygonArea;
 
+	@Column(columnDefinition = "boolean default false")
 	private boolean isDisabled;
 
 	private String module;
