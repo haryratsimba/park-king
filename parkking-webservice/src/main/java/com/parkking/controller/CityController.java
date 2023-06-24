@@ -19,7 +19,7 @@ import com.parkking.exception.ParkkingApiException;
 import com.parkking.service.CityService;
 
 @RestController
-@RequestMapping(value = "/city", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/cities", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CityController {
 
     @Autowired
