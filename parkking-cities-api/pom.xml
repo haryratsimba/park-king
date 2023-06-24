@@ -8,14 +8,6 @@
 	<artifactId>parkking-cities-api</artifactId>
 	<packaging>pom</packaging>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.parkking</groupId>
-			<artifactId>parkking-cities-connector</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
-
 	<modules>
 		<module>parkking-webservice</module>
 		<module>parkking-service</module>

@@ -19,7 +19,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.parkking</groupId>
-			<artifactId>parkking-cities-connector</artifactId>
+			<artifactId>common-connector</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.parkking</groupId>
+			<artifactId>poitiers-connector</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
