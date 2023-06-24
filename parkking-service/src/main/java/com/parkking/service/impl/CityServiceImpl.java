@@ -14,10 +14,7 @@ import com.parkking.dto.City;
 import com.parkking.repository.CityRepository;
 import com.parkking.service.CityService;
 
-import lombok.extern.slf4j.Slf4j;
-
 @Service
-@Slf4j
 public class CityServiceImpl implements CityService {
 
 	@Autowired

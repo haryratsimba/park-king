@@ -37,7 +37,7 @@ public class CityController {
 
         List<City> cities = new ArrayList<>();
         if (lat.isPresent()) {
-            cities = service.getCoordsBelongingCities(lat.get(), lat.get());
+            cities = service.getCoordsBelongingCities(lat.get(), lng.get());
         } else {
             cities = service.getAllCities();
         }
