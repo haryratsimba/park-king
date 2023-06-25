@@ -27,11 +27,11 @@ public interface ParkingDataStandardizable {
     /**
      * @return la latitude.
      */
-    public double getLat();
+    public Double getLat();
 
     /**
      * @return la longitude.
      */
-    public double getLng();
+    public Double getLng();
 
 }

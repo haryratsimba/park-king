@@ -1,5 +1,5 @@
 
-package com.parkking.connector.poitiers.opendata;
+package com.parkking.poitiers.opendata.data;
 
 import java.util.List;
 
@@ -36,13 +36,13 @@ public class PoitiersParkingOpenData implements ParkingDataStandardizable {
     }
 
     @Override
-    public double getLat() {
-        return geoPoint2d != null && geoPoint2d.size() == 2 ? geoPoint2d.get(0) : 0d;
+    public Double getLat() {
+        return geoPoint2d != null && geoPoint2d.size() == 2 ? geoPoint2d.get(0) : null;
     }
 
     @Override
-    public double getLng() {
-        return geoPoint2d != null && geoPoint2d.size() == 2 ? geoPoint2d.get(1) : 0d;
+    public Double getLng() {
+        return geoPoint2d != null && geoPoint2d.size() == 2 ? geoPoint2d.get(1) : null;
     }
 
 }

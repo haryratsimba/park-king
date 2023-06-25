@@ -1,6 +1,7 @@
 
 package com.parkking.service.impl;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,7 +18,10 @@ import com.parkking.exception.ParkkingApiException;
 import com.parkking.service.CityService;
 import com.parkking.service.ParkingService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class ParkingServiceImpl implements ParkingService {
 
     @Autowired
@@ -40,9 +44,17 @@ public class ParkingServiceImpl implements ParkingService {
 
         // Charge le connecteur de la ville a partir de son nom
         CityParkingConnector cityParkingConnector = beans.getBean(city.getConnector(), CityParkingConnector.class);
-        List<ParkingDataStandardizable> parkings = cityParkingConnector.getParkings(lat, lng, distance);
 
-        return parkings.stream().map(Parking::fromConnectorData).collect(Collectors.toList());
+        try {
+            Collection<ParkingDataStandardizable> parkings = cityParkingConnector.getParkings(lat, lng, distance);
+
+            return parkings.stream().map(Parking::fromConnectorData).collect(Collectors.toList());
+
+        } catch (Exception e) {
+            log.error("Error with {} connector : {}", city.getConnector(), e);
+
+            throw new ParkkingApiException("Could not fetch parking data, please try later", 500);
+        }
     }
 
 }
