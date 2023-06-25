@@ -31,7 +31,7 @@ public class ParkingController {
             @PathVariable String cityCode,
             @RequestParam("lat") Optional<Double> lat,
             @RequestParam("lng") Optional<Double> lng,
-            @RequestParam("lng") Optional<Integer> distance) {
+            @RequestParam("distance") Optional<Integer> distance) {
         // @formatter:on
 
         // Lat/lng sont optionnels, mais si l'un est renseigne, l'autre doit l'etre aussi

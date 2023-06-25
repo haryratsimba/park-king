@@ -19,6 +19,8 @@ public class PoitiersParkingOpenData implements ParkingDataStandardizable {
 
     @JsonProperty(value = "geo_point_2d")
     private List<Double> geoPoint2d;
+    
+    private String dist;
 
     @Override
     public String getName() {
@@ -43,6 +45,11 @@ public class PoitiersParkingOpenData implements ParkingDataStandardizable {
     @Override
     public Double getLng() {
         return geoPoint2d != null && geoPoint2d.size() == 2 ? geoPoint2d.get(1) : null;
+    }
+
+    @Override
+    public String getDistance() {
+        return dist;
     }
 
 }

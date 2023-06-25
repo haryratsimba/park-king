@@ -1,6 +1,7 @@
 
 package com.parkking.connector.cities.opendata.utils;
 
+import java.util.Locale;
 import java.util.Optional;
 
 /**
@@ -30,7 +31,7 @@ public class OpenDataUtils {
         // Ex: &geofilter.distance=46.58369748714056,0.3324571251869201,50
         if (lat.isPresent() && lng.isPresent() && distance.isPresent()) {
             urlBuilder.append("&geofilter.distance=");
-            urlBuilder.append(String.format("%f,%f,%d", lat.get(), lng.get(), distance.get()));
+            urlBuilder.append(String.format(Locale.US, "%f,%f,%d", lat.get(), lng.get(), distance.get()));
         }
 
         return urlBuilder.toString();

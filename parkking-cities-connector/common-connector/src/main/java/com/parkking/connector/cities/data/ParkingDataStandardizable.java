@@ -34,4 +34,9 @@ public interface ParkingDataStandardizable {
      */
     public Double getLng();
 
+    /**
+     * @return la distance par rapport aux coordonees fournies.
+     */
+    public String getDistance();
+
 }

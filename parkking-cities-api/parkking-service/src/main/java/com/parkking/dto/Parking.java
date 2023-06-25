@@ -19,6 +19,8 @@ public class Parking {
     private double lat;
 
     private double lng;
+    
+    private String distance;
 
     public static Parking fromConnectorData(ParkingDataStandardizable data) {
         // @formatter:off
@@ -28,6 +30,7 @@ public class Parking {
 	            .remaining(data.getRemaining())
 	            .lat(data.getLat())
 	            .lng(data.getLng())
+	            .distance(data.getDistance())
 	            .build();
         // @formatter:on
     }
