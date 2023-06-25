@@ -23,7 +23,7 @@ import com.parkking.poitiers.opendata.data.PoitiersRealTimeParkingOpenData;
 import com.parkking.poitiers.opendata.service.PoitiersParkingFetchService;
 
 /**
- * Service permettant de recuperer les donnees parking de la ville de Poitiers.
+ * Service permettant de recuperer les donnees parking de la ville de Poitiers dans un format standardise pour toutes les villes.
  * 
  * @author hary.ratsimba
  *
