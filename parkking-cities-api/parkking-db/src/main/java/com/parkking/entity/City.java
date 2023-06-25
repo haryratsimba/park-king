@@ -22,6 +22,6 @@ public class City {
 	@Column(columnDefinition = "boolean default false")
 	private boolean isDisabled;
 
-	private String module;
+	private String connector;
 
 }

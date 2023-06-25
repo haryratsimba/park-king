@@ -35,7 +35,7 @@ public class CityServiceImpl implements CityService {
 	@Override
 	public City getCityByCode(String cityCode) {
 		Optional<com.parkking.entity.City> entity = repository.findById(cityCode);
-		if (entity.isPresent()) {
+		if (entity.isPresent() && !entity.get().isDisabled()) {
 			return City.fromEntity(entity.get());
 		} else {
 			return null;

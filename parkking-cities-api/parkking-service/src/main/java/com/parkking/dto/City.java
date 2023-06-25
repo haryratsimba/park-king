@@ -1,4 +1,7 @@
+
 package com.parkking.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,12 +10,15 @@ import lombok.Data;
 @Builder
 public class City {
 
-	private String code;
+    private String code;
 
-	private String label;
+    private String label;
 
-	public static City fromEntity(com.parkking.entity.City entity) {
-		return City.builder().code(entity.getCode()).label(entity.getLabel()).build();
-	}
+    @JsonIgnore
+    private String connector;
+
+    public static City fromEntity(com.parkking.entity.City entity) {
+        return City.builder().code(entity.getCode()).label(entity.getLabel()).connector(entity.getConnector()).build();
+    }
 
 }
