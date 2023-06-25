@@ -2,7 +2,6 @@
 package com.parkking.poitiers.connector.service.impl;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
@@ -46,7 +45,7 @@ public class PoitiersParkingConnector implements CityParkingConnector {
         // On se base sur les coordonnees pour determiner si les parking sont les meme entre les 2 endpoints
         // On merge les parking en donnant la priorite a ceux qui ont les donnees en temps reel
         Map<Pair<Double, Double>, ParkingDataStandardizable> parkings = Stream.of(realtimeParkings.getStandardizedParkingsList(), allParkings.getStandardizedParkingsList())
-                .flatMap(List::stream)
+                .flatMap(Collection::stream)
                 .filter(p -> p.getLat() != null && p.getLng() != null)
                 .collect(Collectors.toMap(p -> Pair.of(p.getLat(), p.getLng()), Function.identity(), (realTimeP, basicP) -> realTimeP));
         

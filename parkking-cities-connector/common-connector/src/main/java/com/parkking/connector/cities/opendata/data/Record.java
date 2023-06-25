@@ -6,7 +6,7 @@ import com.parkking.connector.cities.data.ParkingDataStandardizable;
 import lombok.Data;
 
 @Data
-public class Record<T extends ParkingDataStandardizable> {
+public class Record<T extends OpenDataField & ParkingDataStandardizable> {
 
     private String datasetid;
 

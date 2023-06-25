@@ -47,5 +47,6 @@
 	<modules>
 		<module>common-connector</module>
 		<module>poitiers-connector</module>
+		<module>roubaix-connector</module>
 	</modules>
 </project>

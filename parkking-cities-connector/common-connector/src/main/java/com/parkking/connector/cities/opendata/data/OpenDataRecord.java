@@ -2,6 +2,7 @@
 package com.parkking.connector.cities.opendata.data;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,11 +11,11 @@ import com.parkking.connector.cities.data.ParkingDataStandardizable;
 import lombok.Data;
 
 @Data
-public class OpenDataRecord<T extends ParkingDataStandardizable> {
+public class OpenDataRecord<T extends OpenDataField & ParkingDataStandardizable> {
 
     private List<Record<T>> records = new ArrayList<>();
 
-    public List<T> getStandardizedParkingsList() {
+    public Collection<ParkingDataStandardizable> getStandardizedParkingsList() {
         if (records == null) {
             return new ArrayList<>();
         }

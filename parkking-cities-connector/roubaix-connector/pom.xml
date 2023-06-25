@@ -2,10 +2,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.parkking</groupId>
-		<artifactId>parkking-cities-api</artifactId>
+		<artifactId>parkking-cities-connector</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>parkking-service</artifactId>
+	<artifactId>roubaix-connector</artifactId>
 
 	<dependencies>
 		<dependency>
@@ -13,23 +13,16 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.parkking</groupId>
-			<artifactId>parkking-db</artifactId>
-			<version>${project.version}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.parkking</groupId>
 			<artifactId>common-connector</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.parkking</groupId>
-			<artifactId>poitiers-connector</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.parkking</groupId>
-			<artifactId>roubaix-connector</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

@@ -1,7 +1,5 @@
 
-package com.parkking.poitiers.opendata.data;
-
-import java.util.List;
+package com.parkking.roubaix.opendata.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.parkking.connector.cities.data.ParkingDataStandardizable;
@@ -12,27 +10,21 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class PoitiersParkingOpenData extends OpenDataField implements ParkingDataStandardizable {
+public class RoubaixParkingOpenData extends OpenDataField implements ParkingDataStandardizable {
 
-    @JsonProperty(value = "nom_du_par")
-    private String nomDuPar;
+    private String nom;
 
-    @JsonProperty(value = "nb_places")
-    private int nbPlaces;
-
-    @JsonProperty(value = "geo_point_2d")
-    private List<Double> geoPoint2d;
-    
-    private String dist;
+    @JsonProperty(value = "nb_place")
+    private int nbPlace;
 
     @Override
     public String getName() {
-        return nomDuPar;
+        return nom;
     }
 
     @Override
     public int getCapacity() {
-        return nbPlaces;
+        return nbPlace;
     }
 
     @Override
@@ -42,12 +34,12 @@ public class PoitiersParkingOpenData extends OpenDataField implements ParkingDat
 
     @Override
     public Double getLat() {
-        return geoPoint2d != null && geoPoint2d.size() == 2 ? geoPoint2d.get(0) : null;
+        return geo_point_2d != null && geo_point_2d.size() == 2 ? geo_point_2d.get(0) : null;
     }
 
     @Override
     public Double getLng() {
-        return geoPoint2d != null && geoPoint2d.size() == 2 ? geoPoint2d.get(1) : null;
+        return geo_point_2d != null && geo_point_2d.size() == 2 ? geo_point_2d.get(1) : null;
     }
 
     @Override

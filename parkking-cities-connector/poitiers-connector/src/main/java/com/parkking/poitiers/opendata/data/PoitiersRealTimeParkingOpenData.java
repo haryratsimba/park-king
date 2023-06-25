@@ -5,11 +5,14 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.parkking.connector.cities.data.ParkingDataStandardizable;
+import com.parkking.connector.cities.opendata.data.OpenDataField;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
-public class PoitiersRealTimeParkingOpenData implements ParkingDataStandardizable {
+@EqualsAndHashCode(callSuper = true)
+public class PoitiersRealTimeParkingOpenData extends OpenDataField implements ParkingDataStandardizable {
 
     @JsonProperty(value = "nom")
     private String nom;
