@@ -28,7 +28,7 @@ public class CityServiceImpl implements CityService {
 	@Override
 	public List<City> getCoordsBelongingCities(double lat, double lng) {
 		GeometryFactory geometryFactory = new GeometryFactory();
-		Geometry point = geometryFactory.createPoint(new Coordinate(lat, lng));
+		Geometry point = geometryFactory.createPoint(new Coordinate(lng, lat));
 		return repository.findCoveringCity(point).stream().map(City::fromEntity).collect(Collectors.toList());
 	}
 
