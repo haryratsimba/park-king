@@ -18,6 +18,13 @@ import com.parkking.dto.Parking;
 import com.parkking.exception.ParkkingApiException;
 import com.parkking.service.ParkingService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
 @RestController
 @RequestMapping(value = "/parkings", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ParkingController {
@@ -25,14 +32,20 @@ public class ParkingController {
     @Autowired
     private ParkingService service;
 
+    // @formatter:off
+    @Operation(summary = "Recupere la liste des parking d'une ville correspondants aux criteres")
+    @ApiResponses(value = { 
+        @ApiResponse(responseCode = "200", description = "Liste des parkings d'une ville", 
+        content = { @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Parking.class))) }),
+        @ApiResponse(responseCode = "400", description = "Latitude/longitude/distance fournis mais incomplets", content = @Content)
+    })
     @GetMapping("/{cityCode}")
     public ResponseEntity<ParkkingApiResponse<List<Parking>>> getParkings(
-    // @formatter:off
             @PathVariable String cityCode,
             @RequestParam("lat") Optional<Double> lat,
             @RequestParam("lng") Optional<Double> lng,
             @RequestParam("distance") Optional<Integer> distance) {
-        // @formatter:on
+    // @formatter:on
 
         // Lat/lng sont optionnels, mais si l'un est renseigne, l'autre doit l'etre aussi
         if (lat.isEmpty() && lng.isPresent() || lat.isPresent() && lng.isEmpty()) {
