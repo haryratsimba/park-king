@@ -91,7 +91,7 @@ Etapes pour ajouter une ville (on va prendre l'exemple de Lille) :
 1. Créer un nouveau module Maven dans le projet `parkking-cities-connector`
 2. S'assurer qu'il est bien listé en tant que module Maven dans le pom.xml de `parkking-cities-connector`
 3. Déclarer ce nouveau module en tant que dépendance dans le pom.xml du module `parkking-service` du projet `parkking-cities-api`
-4. Créer un service annoté `@Service` dans le nouveau module, et s'assurer de rajouter un nom au service dans l'annotation, ex : `@Service("lille-connector")`. Ce sera le nom du connecteur, qu'en renseignera en base de données. Ce service devra implémenter l'interface `CityParkingConnector`
+4. Créer un service annoté `@Service` dans le nouveau module, et s'assurer de rajouter un nom au service dans l'annotation, ex : `@Service("lille-connector")`. Ce sera le nom du connecteur à lier à une ville en base de données. Ce service devra implémenter l'interface `CityParkingConnector`
 5. Créer une ligne dans la table `City`, et renseigner le nom du connecteur, ici `lille-connector` dans la colonne `connector`
 
 Pour créer le polygon correspondant à la ville de Lille, je consulte la [carte des parking](https://opendata.lillemetropole.fr/explore/dataset/disponibilite-parkings/map/?location=11,50.66506,3.11548&basemap=jawg.streets) de la ville de Lilles qu'ils mettent à disposition : 
