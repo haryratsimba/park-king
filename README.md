@@ -22,7 +22,6 @@ Le projet est paramétré à travers une seule table `City` qui recense les diff
 
 Je me suis inspiré du principe de [CityMapper](https://citymapper.com/), c'est à dire compartimenter les données par ville.
 
-
 En effet, pour des raisons de performance, et de navigation, nous ne pouvons pas afficher les données parking de toutes les villes à la fois.
 Qu'importe le client (application mobile, site web), celui-ci devra demander à l'utilisateur de choisir une ville, ou de se baser sur la position actuelle de l'utilisateur pour laisser l'API déterminer la ville.
 
@@ -51,7 +50,6 @@ Un exemple de paramétrage en base de données pour la ville de Poitiers :
 ### Modules du projet
 
 Le projet est structuré sous forme de modules Maven. Cette architecture n-tiers a été choisie pour faciliter la maintenance et l'expérience développeur en déléguant à chaque module une responsabilité particulière. Cela permet également de mettre en place des tests par module (intégration pour la couche webservice, JUnit pour la couche service).
-
 
 ```
 |
@@ -82,6 +80,8 @@ L'idée est de proposer une structure modulaire :
 - Les connecteurs implémentent un contrat d'interface commun : ils prennent en paramètres les même input, et retournent en sortie les mêmes output
 - Les modules peuvent être ajoutés, désactivés (par exemple avec l'utilisation de profiles sous Maven), supprimés facilement. Cela permet d'ajouter des villes plus facilement, ou bien de décommissionner / migrer également une ville sans impacter les autres villes
 - 1 ville = 1 connecteur : facilite la maintenance, on sait où naviguer pour maintenir un composant
+
+:point_right: Aujourd'hui, le projet contient **2 villes / connecteurs** : Poitiers et Roubaix.
 
 
 ### Ajouter une nouvelle ville
@@ -143,6 +143,7 @@ Ce modèle a donc des limites :
 Pour des soucis de maintenabilité et de clarté, quitte à avoir de la redondance, j'ai opté pour la solution actuelle sous forme de modules/connecteurs. Chaque module a sa propre responsabilité.
 
 J'ai fais également les choix suivants :
+- Intégration de 2 villes pour l'instant : Poitiers et Roubaix afin de montrer l'utilisation des connecteurs
 - N'étant pas connaisseur, j'utilise la latitude + longitude + distance (mètres) par défaut pour rechercher les parking à proximité car ce sont les critères utilisés par Opendata
 - Ajout d'Hibernate spatial, notamment pour gérer les polygones des villes. Pour les villes ne disposant que de fichiers plats, on pourrait rajouter les parking en base de données avec leur coordonnées et faciliter la recherche par rapport à un point avec Hibernate
 - H2, pour le développement plutôt qu'une base de données persistente
