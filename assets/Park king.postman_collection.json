@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "8f778ad7-bca4-4d7d-9199-8e1b1e1fe255",
+		"name": "Park king",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Parkings",
+			"item": [
+				{
+					"name": "Récupère tous les parkings de Poitiers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parkings/poitiers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parkings",
+								"poitiers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récupère tous les parkings de Roubaix",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parkings/roubaix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parkings",
+								"roubaix"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récupère les parkings de Poitiers a proximité d'un point",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parkings/poitiers?lat=46.58027000081975&lng=0.3491732290149798&distance=200",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parkings",
+								"poitiers"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "46.58027000081975"
+								},
+								{
+									"key": "lng",
+									"value": "0.3491732290149798"
+								},
+								{
+									"key": "distance",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récupère les parkings de Roubaix a proximité d'un point",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parkings/roubaix?lat=50.68977852530989&lng=3.211199639801265&distance=500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parkings",
+								"roubaix"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "50.68977852530989"
+								},
+								{
+									"key": "lng",
+									"value": "3.211199639801265"
+								},
+								{
+									"key": "distance",
+									"value": "500"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OpenData",
+			"item": [
+				{
+					"name": "https://data.grandpoitiers.fr/api/records/1.0/search/?dataset=mobilite-parkings-grand-poitiers-donnees-metiers&rows=1000&facet=nom_du_parking&facet=zone_tarifaire&facet=statut2&facet=statut3&geofilter.distance=46.58369748714056,0.3324571251869201,50",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://data.grandpoitiers.fr/api/records/1.0/search/?dataset=mobilite-parkings-grand-poitiers-donnees-metiers&rows=1000&facet=nom_du_parking&facet=zone_tarifaire&facet=statut2&facet=statut3",
+							"protocol": "https",
+							"host": [
+								"data",
+								"grandpoitiers",
+								"fr"
+							],
+							"path": [
+								"api",
+								"records",
+								"1.0",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "dataset",
+									"value": "mobilite-parkings-grand-poitiers-donnees-metiers"
+								},
+								{
+									"key": "rows",
+									"value": "1000"
+								},
+								{
+									"key": "facet",
+									"value": "nom_du_parking"
+								},
+								{
+									"key": "facet",
+									"value": "zone_tarifaire"
+								},
+								{
+									"key": "facet",
+									"value": "statut2"
+								},
+								{
+									"key": "facet",
+									"value": "statut3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://data.grandpoitiers.fr/api/records/1.0/search/?dataset=mobilite-parkings-grand-poitiers-donnees-metiers&rows=1000&facet=nom_du_parking&facet=zone_tarifaire&facet=statut2&facet=statut3&geofilter.distance=46.58369748714056,0.3324571251869201,50 Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://data.grandpoitiers.fr/api/records/1.0/search/?dataset=mobilite-parkings-grand-poitiers-donnees-metiers&rows=1000&facet=nom_du_parking&facet=zone_tarifaire&facet=statut2&facet=statut3&geofilter.distance=46.58369748714056,0.3324571251869201,50",
+							"protocol": "https",
+							"host": [
+								"data",
+								"grandpoitiers",
+								"fr"
+							],
+							"path": [
+								"api",
+								"records",
+								"1.0",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "dataset",
+									"value": "mobilite-parkings-grand-poitiers-donnees-metiers"
+								},
+								{
+									"key": "rows",
+									"value": "1000"
+								},
+								{
+									"key": "facet",
+									"value": "nom_du_parking"
+								},
+								{
+									"key": "facet",
+									"value": "zone_tarifaire"
+								},
+								{
+									"key": "facet",
+									"value": "statut2"
+								},
+								{
+									"key": "facet",
+									"value": "statut3"
+								},
+								{
+									"key": "geofilter.distance",
+									"value": "46.58369748714056,0.3324571251869201,50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Parking en temps réel à Poitiers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://data.grandpoitiers.fr/api/records/1.0/search/?dataset=mobilites-stationnement-des-parkings-en-temps-reel&facet=nom&geofilter.distance=46.580270,0.349173,500",
+							"protocol": "https",
+							"host": [
+								"data",
+								"grandpoitiers",
+								"fr"
+							],
+							"path": [
+								"api",
+								"records",
+								"1.0",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "dataset",
+									"value": "mobilites-stationnement-des-parkings-en-temps-reel"
+								},
+								{
+									"key": "facet",
+									"value": "nom"
+								},
+								{
+									"key": "geofilter.distance",
+									"value": "46.580270,0.349173,500"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récupère tous les parking de Roubaix",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=parkings-et-coordonnees&rows=1000&q=&facet=type&facet=nb_place_h",
+							"protocol": "https",
+							"host": [
+								"opendata",
+								"lillemetropole",
+								"fr"
+							],
+							"path": [
+								"api",
+								"records",
+								"1.0",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "dataset",
+									"value": "parkings-et-coordonnees"
+								},
+								{
+									"key": "rows",
+									"value": "1000"
+								},
+								{
+									"key": "q",
+									"value": ""
+								},
+								{
+									"key": "facet",
+									"value": "type"
+								},
+								{
+									"key": "facet",
+									"value": "nb_place_h"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récupère les parking de Roubaix à proximité d'un point",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=parkings-et-coordonnees&q=&facet=type&facet=nb_place_h&geofilter.distance=50.68977852530989,3.211199639801265,500",
+							"protocol": "https",
+							"host": [
+								"opendata",
+								"lillemetropole",
+								"fr"
+							],
+							"path": [
+								"api",
+								"records",
+								"1.0",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "dataset",
+									"value": "parkings-et-coordonnees"
+								},
+								{
+									"key": "q",
+									"value": ""
+								},
+								{
+									"key": "facet",
+									"value": "type"
+								},
+								{
+									"key": "facet",
+									"value": "nb_place_h"
+								},
+								{
+									"key": "geofilter.distance",
+									"value": "50.68977852530989,3.211199639801265,500"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cities",
+			"item": [
+				{
+					"name": "Récupère toutes les villes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récupère une ville par son code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cities/poitiers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities",
+								"poitiers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récupère Roubaix à partir de coordonnées",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cities?lat=50.68977852530989&lng=3.211199639801265",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "50.68977852530989"
+								},
+								{
+									"key": "lng",
+									"value": "3.211199639801265"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récupère Poitiers à partir de coordonnées",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cities?lat=46.585081006711334&lng=0.33477852461729185",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "46.585081006711334"
+								},
+								{
+									"key": "lng",
+									"value": "0.33477852461729185"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swagger",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/swagger-ui.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-ui.html"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
