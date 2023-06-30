@@ -7,6 +7,8 @@ L'API est modulaire : l'intégration de nouvelles villes se fait par l'ajout de 
 
 Une fois le projet lancé, la documentation peut être consultée à l'adresse suivante : http://localhost:8080/swagger-ui.html
 
+La collection [Postman](https://www.postman.com/) est disponible dans le dossier `/assets`.
+
 ## Objectifs
 
 - Lister les parking d'un maximum de villes, les parkings à proximité d'un point (ex : position de l'utilisateur, adresse)
@@ -125,11 +127,14 @@ Table `Datasource`
 | Colonne       | Type      |
 | --------------|---------- |
 | id (PK)     | int   |
+| city_id (FK)         | bit   |
 | isDisabled         | bit   |
 | url   | varchar   |
-| format (ex: json)   | varchar |
-| format (ex: json)   | varchar |
-
+| parsing_method (ex: jsonPath|xPath) | varchar |
+| parsing_name_expr | varchar |
+| parsing_capacity_expr | varchar |
+| parsing_latlng_expr | varchar |
+| parsing_remaining_expr | varchar |
 
 Si cela permettrait de mettre en place rapidement de nouvelles villes disposant de données via une API Opendata, cela se complique si on doit gérer d'autres sources et format de données. En effet, certaines villes n'ont pas d'API, mais mettent à disposition les données sous forme de fichier JSON, GEOJSON, CSV, etc. Dans ce cas, il faudrait soit les ajouter en tant que fichier plat, soit les insérer dans une base de données (par exemple pour faciliter la recherche par coordonnées geo).
 
@@ -154,7 +159,7 @@ Ce que j'aurai mis en place dans un contexte pro et avec un peu plus de temps et
 - JUnit pour les module service et connecteurs, et tests d'intégration pour le module webservice
 - Profile Maven pour chaque module de connecteur, permettant de ne pas les inclure dans le build au lieu de commenter le code (ex: CVE, maintenance)
 
-## Ce que j'ai appris
+## Ce que j'ai pu apprendre
 - La patience, surtout pour configurer hibernate-spatial et h2 avec h2gis
 - Le multimodule avec Maven
 - Pleins de choses théoriques sur les systèmes géographiques, cartes, etc.
