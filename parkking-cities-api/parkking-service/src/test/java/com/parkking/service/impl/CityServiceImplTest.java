@@ -29,7 +29,7 @@ import lombok.AllArgsConstructor;
 public class CityServiceImplTest {
 
 	@AllArgsConstructor
-	enum CitiesParams {
+	enum GetAllCitiesParams {
 
 		EMPTY_CITIES(List.of()),
 
@@ -43,7 +43,7 @@ public class CityServiceImplTest {
 	}
 
 	@AllArgsConstructor
-	enum CoordsParams {
+	enum GetCoordsParams {
 
 		COORDS_MIN_WITH_CITY_A(Double.MIN_VALUE, Double.MIN_VALUE,
 				List.of(com.parkking.entity.City.builder().code("cityA").label("City A").build())),
@@ -72,8 +72,8 @@ public class CityServiceImplTest {
 	private CityRepository repository;
 
 	@ParameterizedTest
-	@EnumSource(value = CitiesParams.class)
-	public void testGetAllCities(CitiesParams params) {
+	@EnumSource(value = GetAllCitiesParams.class)
+	public void testGetAllCities(GetAllCitiesParams params) {
 		// Init
 		when(repository.findAll()).thenReturn(params.cities);
 
@@ -87,8 +87,8 @@ public class CityServiceImplTest {
 
 	@SuppressWarnings("unchecked")
 	@ParameterizedTest
-	@EnumSource(value = CoordsParams.class)
-	public void testGetCoordsBelongingCities(CoordsParams params) {
+	@EnumSource(value = GetCoordsParams.class)
+	public void testGetCoordsBelongingCities(GetCoordsParams params) {
 
 		// Init
 		when(repository.findCoveringCity(any())).thenReturn(params.cities);
