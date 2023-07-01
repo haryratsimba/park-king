@@ -2,6 +2,7 @@ package com.parkking.api;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -29,7 +30,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 		ParkkingApiResponse<?> response = new ParkkingApiResponse<>();
 		response.setError(ex.getMessage());
 
-		return this.handleExceptionInternal(ex, response, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+		return this.handleExceptionInternal(ex, response, new HttpHeaders(), HttpStatusCode.valueOf(ex.getHttpCode()), request);
 	}
 
 	@ExceptionHandler(value = { Exception.class })

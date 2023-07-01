@@ -42,15 +42,19 @@ public class ParkingServiceImpl implements ParkingService {
             throw new ParkkingApiException("This city is disabled", 500);
         }
 
-        // Charge le connecteur de la ville a partir de son nom
-        CityParkingConnector cityParkingConnector = beans.getBean(city.getConnector(), CityParkingConnector.class);
-
         try {
+        	// Charge le connecteur de la ville a partir de son nom
+        	CityParkingConnector cityParkingConnector = beans.getBean(city.getConnector(), CityParkingConnector.class);
+        	
+        	// Recupere les donnees parking du connecteur
             Collection<ParkingDataStandardizable> parkings = cityParkingConnector.getParkings(lat, lng, distance);
 
             return parkings.stream().map(Parking::fromConnectorData).collect(Collectors.toList());
 
         } catch (Exception e) {
+        	// On pourrait envoyer un email ou un message Teams/Slack/autre 
+        	// pour prevenir l'équipe tech que le connecteur n'est pas active
+        	
             log.error("Error with {} connector : {}", city.getConnector(), e);
 
             throw new ParkkingApiException("Could not fetch parking data, please try later", 500);
