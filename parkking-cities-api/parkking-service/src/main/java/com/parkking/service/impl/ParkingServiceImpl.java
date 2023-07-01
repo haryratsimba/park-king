@@ -28,7 +28,7 @@ public class ParkingServiceImpl implements ParkingService {
     private CityService cityService;
 
     @Autowired
-    BeanFactory beans;
+    private BeanFactory beans;
 
     @Override
     public List<Parking> getParkings(String cityCode, Optional<Double> lat, Optional<Double> lng, Optional<Integer> distance) {
