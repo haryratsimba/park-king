@@ -1,7 +1,7 @@
 # park-king
 Marre de tourner en rond à la recherche de places ? :car: :parking:  
 
-Cette API REST regroupe plusieurs sources données de différentes villes, afin de faciliter la recherche d'un parking.
+Cette API REST regroupe plusieurs sources de données de différentes villes, afin de faciliter la recherche d'un parking.
 
 L'API est modulaire : l'intégration de nouvelles villes se fait par l'ajout de `connecteurs`.
 
@@ -156,10 +156,11 @@ J'ai fais également les choix suivants :
 ## Pistes d'amélioration
 
 Ce que j'aurai mis en place dans un contexte pro et avec un peu plus de temps et de pratique :
-- JUnit pour les module service et connecteurs, et tests d'intégration pour le module webservice
+- Plus de JUnit, aujourd'hui seul le module parkking-service est couvert
+- Des tests d'intégration pour les modules parkking-webservice et pour les connecteurs
 - Profile Maven pour chaque module de connecteur, permettant de ne pas les inclure dans le build au lieu de commenter le code (ex: CVE, maintenance)
 
 ## Ce que j'ai pu apprendre
 - La patience, surtout pour configurer hibernate-spatial et h2 avec h2gis
 - Le multimodule avec Maven
-- Pleins de choses théoriques sur les systèmes géographiques, cartes, etc.
+- Pleins de choses théoriques sur les systèmes géographiques, cartes : polygon, hibernate-spatial, etc.
